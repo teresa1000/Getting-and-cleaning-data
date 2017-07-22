@@ -3,12 +3,13 @@ CodeBook for Getting and Cleainng Data Project
 Data Source:
 
 Site from where the Data was fetched
+
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 Data for the Project
+
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-Saved in the Working Directory as folder named:  UCI-HAR-Dataset
 
 The resulting data fields in tidydata.txt.
 
