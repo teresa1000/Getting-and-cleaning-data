@@ -1,22 +1,22 @@
-CodeBook for Getting and Cleainng Data Project
+# CodeBook for Getting and Cleainng Data Project
 
-A.	Data Source:
+## A.	Data Source:
 
 Site from where the Data was fetched
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-B.	Data for the Project:
+## B.	Data for the Project:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-C.	 The resulting data fields in tidydata.txt .
+## C.	 The resulting data fields in 'tidydata.txt'.
 
-D.	Identifiers: 
+## D.	Identifiers: 
 1. subject - The ID of the test subject
 2. activity - The type of activity 
 
-E.	Activity Labels:    
+## E.	Activity Labels:    
 1. WALKING (value 1): subject was walking during the test       
 2. WALKING_UPSTAIRS (value 2): subject was walking up a staircase during the test
 3. WALKING_DOWNSTAIRS (value 3): subject was walking down a staircase during the test
@@ -24,7 +24,7 @@ E.	Activity Labels:
 5. STANDING (value 5): subject was standing during the test
 6. LAYING (value 6): subject was laying down during the test
 
-F.	Variables (Measurements):
+## F.	Variables (Measurements):
 
 1.	subject
 2.	activity
