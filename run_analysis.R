@@ -1,18 +1,18 @@
-#Download the file and put the file in the "data1" folder
+# 1. Get the data
+#Download the file and put it in the "data1" folder
 if(!file.exists("./data1")){dir.create("./data1")}
 
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl,destfile="./data1/Dataset.zip")
-#?unzip
+
 # Unzip dataSet to /data1 directory
 unzip(zipfile="./data1/Dataset.zip",exdir="./data1")
 #get the list of the fileset 
 path_zp <- file.path("./data1" , "UCI HAR Dataset")
 files<-list.files(path_zp, recursive=TRUE)
-files
-#?file.path
+# 2. Read data from the target files
 #reading data from the files into the variables
-dataFeaturesTrain <- read.table(file.path(path_rf, "train", "X_train.txt"),header = FALSE)
+
 dataActivityTest  <- read.table(file.path(path_zp, "test" , "Y_test.txt" ),header = FALSE)
 dataActivityTrain <- read.table(file.path(path_zp, "train", "Y_train.txt"),header = FALSE)
 dataSubjectTrain <- read.table(file.path(path_zp, "train", "subject_train.txt"),header = FALSE)
@@ -26,6 +26,7 @@ str(dataSubjectTest)
 str(dataSubjectTrain)
 str(dataFeaturesTest)
 str(dataFeaturesTrain)
+# 3. Merges the training and the test sets to create one data set
 #Concatenate the data tables by rows
 dataSubject <- rbind(dataSubjectTrain, dataSubjectTest)
 dataActivity<- rbind(dataActivityTrain, dataActivityTest)
@@ -38,7 +39,13 @@ names(dataFeatures)<- dataFeaturesNames$V2
 #Merge columns to get the data frame "Data" for all data
 dataCombine <- cbind(dataSubject, dataActivity)
 Data <- cbind(dataFeatures, dataCombine)
+#4. Extracts only the measurements on the mean and standard deviation 
+#for each measurement
+subdataFeaturesNames<-dataFeaturesNames$V2[grep("mean\\(\\)|std\\(\\)", dataFeaturesNames$V2)]
+selectedNames<-c(as.character(subdataFeaturesNames), "subject", "activity" )
+Data<-subset(Data,select=selectedNames)
 str(Data)
+
 #Descriptive activity names from “activity_labels.txt”
 activityLabels <- read.table(file.path(path_zp, "activity_labels.txt"),header = FALSE)
 Data$activity<-factor(Data$activity)
@@ -63,7 +70,6 @@ library(plyr);
 Data2<-aggregate(. ~subject + activity, Data, mean)
 Data2<-Data2[order(Data2$subject,Data2$activity),]
 write.table(Data2, file = "tidydata.txt",row.name=FALSE)
-Data3<-read.table("tidydata.txt", sep=" ", head=TRUE)
-str(Data3)
-library(knitr)
-knit2html("codebook.Rmd")
+
+# for CodeBook
+write(names(Data2), file = "variables.txt", ncolumns = 1)
