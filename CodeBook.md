@@ -2,22 +2,22 @@
 
 ## A.	Data Source:
 
-Site from where the Data was fetched
+Site from where the Data was fetched:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-## B.	Data for the Project:
+Data for the Project:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-## C.	 The resulting data fields in:
+## B.	 The resulting data fields in:
         tidydata.txt
 
-## D.	Identifiers: 
+## C.	Identifiers: 
 1. subject - The ID of the test subject
 2. activity - The type of activity 
 
-## E.	Activity Labels:    
+## D.	Activity Labels:    
 1. WALKING (value 1): subject was walking during the test       
 2. WALKING_UPSTAIRS (value 2): subject was walking up a staircase during the test
 3. WALKING_DOWNSTAIRS (value 3): subject was walking down a staircase during the test
@@ -25,7 +25,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 5. STANDING (value 5): subject was standing during the test
 6. LAYING (value 6): subject was laying down during the test
 
-## F.	Variables (Measurements):
+## E.	Variables (Measurements):
 
 1.	subject
 2.	activity
