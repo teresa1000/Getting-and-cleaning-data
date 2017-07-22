@@ -10,7 +10,8 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-## C.	 The resulting data fields in 'tidydata.txt'.
+## C.	 The resulting data fields in:
+'tidydata.txt'.
 
 ## D.	Identifiers: 
 1. subject - The ID of the test subject
